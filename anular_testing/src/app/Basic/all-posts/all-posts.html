@@ -1,0 +1,22 @@
+<div class="container">
+    <h1 class="text-center">All Posts</h1>
+    <form class="d-flex gap-2">
+        <input type="number" placeholder="Enter ID" [(ngModel)]="post.id" name="id" >
+        <input type="text" placeholder="Enter Title" [(ngModel)]="post.title" name="title">
+        <input type="text" placeholder="Enter Body" [(ngModel)]="post.body" name="body">
+        <button type="button" (click)="addPost()">Add Post</button>
+    </form>
+
+    <div class="d-flex flex-wrap mt-3 gap-3">
+        @for(post of posts; track post.id){
+        <div  class="card p-2 shadow-sm" style="width: 18rem;">
+            <h5 class="mb-2 ">{{ post.title }}</h5>
+            <p class="mb-2">{{ post.body }}</p>
+            <small>ID: {{ post.id }}</small><br>
+            <button class="btn btn-secondary" [routerLink]="['/postDetails', post.id]">Read More</button>
+            <button class="btn btn-primary" [routerLink]="['/editPost', post.id]">Edit</button>
+            <button class="btn btn-danger" (click)="deletePost(post.id)">Delete</button>
+        </div>
+        }
+    </div>
+</div>
