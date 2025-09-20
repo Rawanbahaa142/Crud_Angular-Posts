@@ -11,6 +11,8 @@ import { AllPosts } from './Basic/all-posts/all-posts';
 import { PostDetails } from './Basic/post-details/post-details';
 import { EditPost } from './Basic/edit-post/edit-post';
 import { routes } from './app-routing-module';
+import { FormUser } from './Basic/form-user/form-user';
+import { UserList } from './Basic/user-list/user-list';
 
 @NgModule({
   imports: [
@@ -27,6 +29,10 @@ import { routes } from './app-routing-module';
     EditPost
   ],
   providers: [],
-  bootstrap: []
+  bootstrap: [],
+  declarations: [
+    FormUser,
+    UserList
+  ]
 })
 export class AppModule {}
